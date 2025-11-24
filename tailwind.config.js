@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+        cerulean: "#009EDC",
+        prussian: "#003153",
+        powder: "#B0E0E6",
+      },
+        
+    },
   },
   plugins: [],
 };
