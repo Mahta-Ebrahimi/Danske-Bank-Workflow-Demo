@@ -1,31 +1,24 @@
 
-# TaskBoard App 🔒✨
-![CI/CD](https://github.com/your-username/your-repo/actions/workflows/ci.yml/badge.svg)
-![Security](https://img.shields.io/badge/security-sanitized-green)
-![UI/UX](https://img.shields.io/badge/uiux-polished-blue)
-
----
-# Danske Bank Workflow Demo 🔒✨
-[![CI/CD](https://github.com/Mahta-Ebrahimi/Danske-Bank-Workflow-Demo/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahta-Ebrahimi/Danske-Bank-Workflow-Demo/actions)
-![UI/UX Designer](https://img.shields.io/badge/UI/UX-Designer-green?style=for-the-badge)
-![Security Sanitized](https://img.shields.io/badge/Security-Sanitized-red?style=for-the-badge)
-![CI/CD Pipeline](https://img.shields.io/badge/CI/CD-Automated-blue?style=for-the-badge)
+# Danske Bank React AI Secure Workflow Demo 🔒✨
 ![React](https://img.shields.io/badge/Frontend-React-lightblue?style=for-the-badge)
+
+![UI/UX Designer](https://img.shields.io/badge/UI/UX-Designer-green?style=for-the-badge)
+
+[![CI/CD](https://github.com/Mahta-Ebrahimi/Danske-Bank-Workflow-Demo/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahta-Ebrahimi/Danske-Bank-Workflow-Demo/actions)
+
+![Security Sanitized](https://img.shields.io/badge/Security-Sanitized-red?style=for-the-badge)
+
+![CI/CD Pipeline](https://img.shields.io/badge/CI/CD-Automated-blue?style=for-the-badge)
+
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Aware-purple?style=for-the-badge)
 
 ---
 
 ## 🚀 Overview
 Danske Bank Workflow Demo is a modern front‑end showcase built with **React** and **inline styles**.  
-It demonstrates my skills as a **Front‑End Developer** and **UI/UX Designer**, with a strong focus on **cybersecurity awareness** and **DevOps practices**.  
-The project is recruiter‑ready: clean UI, visible security features, and a working CI/CD pipeline.
-
----
-
-<!-- ## 🎨 Screenshots  
-- Secure input field with lock icon 🔒  
-- Analytics dashboard with polished inline styles  
-- Security widget showing "All inputs sanitized"   -->
+Danske Bank workflow AI is a recruiter‑ready demo showcasing a clean front‑end built with React and Tailwind CSS.
+It highlights strong UI/UX design principles with clear layouts, engaging user flows, and professional finish.
+Visible cybersecurity features and a GitHub Actions CI/CD pipeline demonstrate awareness of modern development practices.
 
 ---
 
@@ -35,6 +28,9 @@ The project is recruiter‑ready: clean UI, visible security features, and a wor
 - 📊 **Analytics page** with recruiter‑focused UI polish.  
 - ⚡ **CI/CD pipeline** (lint, build, security checks).  
 - 🛡️ **Security dashboard widget** (mock status for cybersecurity awareness).
+
+---
+  
 - ## 📌 Recruiter Note
 This project was intentionally designed as a **professional showcase** rather than a hobby app.  
 It highlights my ability to:
@@ -45,14 +41,17 @@ It highlights my ability to:
 - Implement and troubleshoot **CI/CD pipelines** using GitHub Actions to automate builds, linting, testing, and security checks.  
 - Present technical work in a way that demonstrates both **front‑end mastery** and **awareness of modern DevOps practices**.  
 
+
 ⚡ This repo is a **demo of an AI‑inspired automation workflow** — showing how modern apps can combine **UI/UX clarity, security awareness, and automated pipelines** to deliver recruiter‑ready results.
 
+---
 
 🌐 Live Demo → deployment link (Vercel) 
 
 https://danske-bank-workflow-demo.vercel.app/
 
 ---
+
 
 ## 🛠️ Installation
 Clone the repo and run locally:
@@ -84,6 +83,6 @@ jobs:
       - run: npm test || true
       - run: npm audit --audit-level=moderate || true
 
-💡 Skills Demonstrated → This is where you explicitly list the technologies and practices you want recruiters to notice. It makes your repo double as a portfolio piece.
+
 
 
