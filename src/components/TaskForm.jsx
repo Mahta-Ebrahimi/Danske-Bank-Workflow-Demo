@@ -3,6 +3,7 @@ import { useApp } from "../context/AppContext";
 import { generateSuggestion } from "../utils/aiSuggestions";
 
 // Security feature: sanitize user input to prevent XSS attacks
+{/* <script>alert("hack")</script> */}
 
 function sanitizeInput(input) {
   // Remove <script> tags and other dangerous HTML
