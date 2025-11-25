@@ -2,14 +2,31 @@ import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { generateSuggestion } from "../utils/aiSuggestions";
 
+// Security feature: sanitize user input to prevent XSS attacks
+
+function sanitizeInput(input) {
+  // Remove <script> tags and other dangerous HTML
+  return input.replace(/<[^>]*>?/gm, "");
+}
+
 function TaskForm() {
   const { setTasks } = useApp();
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [priority, setPriority] = useState("");
   const [deadline, setDeadline] = useState("");
   const [error, setError] = useState("");
+const [title, setTitle] = React.useState("");
+  const [isSafe, setIsSafe] = React.useState(true);
 
+  const handleChange = (e) => {
+    const rawValue = e.target.value;
+    const cleanValue = sanitizeInput(rawValue);
+
+    setTitle(cleanValue);
+    setIsSafe(rawValue === cleanValue); // 🔒 true if nothing was stripped
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -88,17 +105,47 @@ function TaskForm() {
           >
             Task Title
           </label>
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            style={{
-              border: "1px solid #d1d5db",
-              padding: "16px 32px",
-              borderRadius: "12px",
-              width: "100%",
-            }}
-            placeholder="Enter task..."
-          />
+   <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        border: "1px solid #d1d5db",
+        borderRadius: "12px",
+        padding: "0 16px",
+        width: "100%",
+        backgroundColor: "#ffffff",
+      }}
+    >
+      <span
+  style={{
+    display: "inline-block",
+    width: "24px",
+    height: "24px",
+    borderRadius: "50%",
+    backgroundColor: isSafe ? "#16a34a" : "#dc2626", // green/red background
+    color: "#fff",
+    textAlign: "center",
+    lineHeight: "24px",
+    marginRight: "8px",
+  }}
+>
+  {isSafe ? "🔒" : "🔓"}
+</span>
+
+
+      <input
+        value={title}
+        onChange={handleChange}
+        style={{
+          flex: 1,
+          border: "none",
+          outline: "none",
+          padding: "14px 4px",
+          fontSize: "16px",
+        }}
+        placeholder="Enter task..."
+      />
+    </div>
         </div>
 
         {/* Category */}

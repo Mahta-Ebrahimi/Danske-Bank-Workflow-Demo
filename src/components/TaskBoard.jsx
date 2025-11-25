@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { generateSuggestion } from "../utils/aiSuggestions";
 
+
+
 function SuggestionTable({ steps }) {
   return (
     <table
@@ -74,6 +76,7 @@ function SuggestionTable({ steps }) {
     </table>
   );
 }
+
 
 
 function TaskBoard() {
