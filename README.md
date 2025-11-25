@@ -34,7 +34,23 @@ The project is recruiter‑ready: clean UI, visible security features, and a wor
 - 🟢/🔴 **Lock icon feedback** (green = safe, red = unsafe input).  
 - 📊 **Analytics page** with recruiter‑focused UI polish.  
 - ⚡ **CI/CD pipeline** (lint, build, security checks).  
-- 🛡️ **Security dashboard widget** (mock status for cybersecurity awareness).  
+- 🛡️ **Security dashboard widget** (mock status for cybersecurity awareness).
+- ## 📌 Recruiter Note
+This project was intentionally designed as a **professional showcase** rather than a hobby app.  
+It highlights my ability to:
+
+- Build attractive, responsive UIs with clear hierarchy and polished design.  
+- Apply **UI/UX principles** to create recruiter‑friendly layouts and user flows.  
+- Integrate visible **cybersecurity features** such as input sanitization, lock icons, and security badges.  
+- Implement and troubleshoot **CI/CD pipelines** using GitHub Actions to automate builds, linting, testing, and security checks.  
+- Present technical work in a way that demonstrates both **front‑end mastery** and **awareness of modern DevOps practices**.  
+
+⚡ This repo is a **demo of an AI‑inspired automation workflow** — showing how modern apps can combine **UI/UX clarity, security awareness, and automated pipelines** to deliver recruiter‑ready results.
+
+
+🌐 Live Demo → deployment link (Vercel) 
+
+https://danske-bank-workflow-demo.vercel.app/
 
 ---
 
@@ -70,18 +86,4 @@ jobs:
 
 💡 Skills Demonstrated → This is where you explicitly list the technologies and practices you want recruiters to notice. It makes your repo double as a portfolio piece.
 
-## 📌 Recruiter Note
-This project was intentionally designed as a **professional showcase** rather than a hobby app.  
-It highlights my ability to:
-
-- Build attractive, responsive UIs with clear hierarchy and polished design.  
-- Apply **UI/UX principles** to create recruiter‑friendly layouts and user flows.  
-- Integrate visible **cybersecurity features** such as input sanitization, lock icons, and security badges.  
-- Implement and troubleshoot **CI/CD pipelines** using GitHub Actions to automate builds, linting, testing, and security checks.  
-- Present technical work in a way that demonstrates both **front‑end mastery** and **awareness of modern DevOps practices**.  
-
-⚡ This repo is a **demo of an AI‑inspired automation workflow** — showing how modern apps can combine **UI/UX clarity, security awareness, and automated pipelines** to deliver recruiter‑ready results.
-
-
-🌐 Live Demo → deployment link (Vercel, Netlify, GitHub Pages) 
 
