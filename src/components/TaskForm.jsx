@@ -8,13 +8,29 @@ function TaskForm() {
   const [category, setCategory] = useState("");
   const [priority, setPriority] = useState("");
   const [deadline, setDeadline] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title.trim() || !category || !priority) return;
 
+    // Validation
+    if (!title.trim()) {
+      setError("Please fill in the Title.");
+      return;
+    }
+    if (!category) {
+      setError("Please choose a Category.");
+      return;
+    }
+    if (!priority) {
+      setError("Please choose a Priority.");
+      return;
+    }
+
+    // Generate suggestion
     const suggestion = generateSuggestion(title, category, priority, deadline);
 
+    // Create new task
     const newTask = {
       id: Date.now(),
       title,
@@ -25,45 +41,90 @@ function TaskForm() {
       suggestion,
     };
 
+    // Add to context
     setTasks((prev) => [...prev, newTask]);
 
+    // Reset form
     setTitle("");
     setCategory("");
     setPriority("");
     setDeadline("");
+    setError("");
   };
 
   return (
-    <div className="flex justify-center mb-6">
-      {/* Wrapper limited to 4/5 width */}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "24px",
+      }}
+    >
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-lg shadow-md w-4/5 flex flex-wrap gap-6 items-end"
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "24px",
+          borderRadius: "12px",
+          boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+          width: "80%",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "24px",
+          alignItems: "flex-end",
+          margin: "0 auto",
+        }}
       >
         {/* Task Title */}
-        <div className="flex-1 min-w-[200px]">
-          <label className="block text-sm font-medium text-prussian mb-2">
+        <div style={{ flex: 1, minWidth: "200px" }}>
+          <label
+            style={{
+              display: "block",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#003153",
+              marginBottom: "8px",
+            }}
+          >
             Task Title
           </label>
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            style={{
+              border: "1px solid #d1d5db",
+              padding: "16px 32px",
+              borderRadius: "12px",
+              width: "100%",
+            }}
             placeholder="Enter task..."
-            className="border px-4 py-3 w-full rounded-lg"
           />
         </div>
 
         {/* Category */}
-        <div className="flex-1 min-w-[200px]">
-          <label className="block text-sm font-medium text-prussian mb-2">
+        <div style={{ flex: 1, minWidth: "200px" }}>
+          <label
+            style={{
+              display: "block",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#003153",
+              marginBottom: "8px",
+            }}
+          >
             Category
           </label>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="border px-4 py-3 rounded-lg w-full"
+            style={{
+              border: "1px solid #d1d5db",
+              padding: "16px 32px",
+              borderRadius: "12px",
+              width: "100%",
+            }}
           >
-            <option value="" disabled hidden>
+            <option value="" disabled>
               Choose Category
             </option>
             <option>Finance</option>
@@ -73,16 +134,29 @@ function TaskForm() {
         </div>
 
         {/* Priority */}
-        <div className="flex-1 min-w-[200px]">
-          <label className="block text-sm font-medium text-prussian mb-2">
+        <div style={{ flex: 1, minWidth: "200px" }}>
+          <label
+            style={{
+              display: "block",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#003153",
+              marginBottom: "8px",
+            }}
+          >
             Priority
           </label>
           <select
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
-            className="border px-4 py-8 rounded-lg w-full"
+            style={{
+              border: "1px solid #d1d5db",
+              padding: "16px 32px",
+              borderRadius: "12px",
+              width: "100%",
+            }}
           >
-            <option value="" disabled hidden>
+            <option value="" disabled>
               Choose Priority
             </option>
             <option>Low</option>
@@ -92,24 +166,68 @@ function TaskForm() {
         </div>
 
         {/* Deadline */}
-        <div className="flex-1 min-w-[200px]">
-          <label className="block text-sm font-medium text-prussian mb-2">
+        <div style={{ flex: 1, minWidth: "200px" }}>
+          <label
+            style={{
+              display: "block",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#003153",
+              marginBottom: "8px",
+            }}
+          >
             Deadline
           </label>
           <input
             type="date"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
-            className="border px-4 py-3 rounded-lg w-full"
+            style={{
+              border: "1px solid #d1d5db",
+              padding: "16px 32px",
+              borderRadius: "12px",
+              width: "74%",
+            }}
           />
         </div>
 
+        {/* Error Message */}
+        {error && (
+          <div
+            style={{
+              width: "100%",
+              color: "#dc2626",
+              fontSize: "14px",
+              fontWeight: 500,
+            }}
+          >
+            {error}
+          </div>
+        )}
+
         {/* Add Button */}
-        <div className="flex-1 min-w-[200px]">
-          <button className="bg-cerulean text-white px-6 py-3 rounded-lg w-full hover:bg-prussian transition-colors">
-            ➕ Add Task
-          </button>
-        </div>
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "rgba(14, 165, 233, 0.85)",
+            color: "#ffffff",
+            padding: "16px 24px",
+            borderRadius: "12px",
+            width: "80vw",
+            transition: "background-color 0.2s ease",
+            display: "block",
+            margin: "0 auto",
+            cursor: "pointer",
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.backgroundColor = "rgba(14, 165, 233, 1)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.backgroundColor = "rgba(14, 165, 233, 0.85)")
+          }
+        >
+          ➕ Add Task
+        </button>
       </form>
     </div>
   );

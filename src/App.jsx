@@ -20,6 +20,7 @@ function App() {
         <Analytics />
         {/* <DarkModeToggle /> */}
       </div>
+
     </AppProvider>
   );
 }
