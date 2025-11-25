@@ -2,31 +2,42 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master ]   # 👈 triggers on pushes to master
   pull_request:
-    branches: [ master ]
+    branches: [ master ]   # 👈 triggers on PRs targeting master
+  workflow_dispatch:        # 👈 adds a manual "Run workflow" button
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repo
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"   # ✅ use Node 20 for Vite/React
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
+      # Build project
+      - name: Build project
+        run: npm run build
 
+      # Lint code (optional, remove if no lint script)
       - name: Lint code
         run: npm run lint
 
-      - name: Security check (npm audit)
+      # Run tests (optional, remove if no test script)
+      - name: Run tests
+        run: npm test
+
+      # Security check (optional, can fail if vulnerabilities exist)
+      - name: Security check
         run: npm audit --audit-level=moderate
