@@ -34,17 +34,11 @@ Visible cybersecurity features and a GitHub Actions CI/CD pipeline demonstrate a
 🛡️ **Security Awareness Demo**
 
 To demonstrate input sanitization, I tested the task field with a malicious script injection attempt:
-
 try {
   {/* <script>alert("hack")</script> */}
-}
-
-The app correctly prevented execution of the injected script, showing that user inputs are sanitized and protected against XSS attacks.  
-For clear feedback, the task field displays a **lock icon** (🔒) that toggles between *open* and *closed* depending on input validity.  
-- A **green lock (closed)** indicates the input is safe and sanitized.  
-- A **red lock (open)** warns of a potentially unsafe attempt.  
-
-Additionally, the **console logs** provide detailed messages confirming that malicious code was blocked, making the security behavior transparent to developers.
+}  
+Additionally, the **console logs** provide detailed messages confirming that malicious code was blocked, 
+making the security behavior transparent to developers.
 
 
 
